@@ -16,7 +16,8 @@
             <a href="#">關於</a>
             <a href="#">服務</a>
             <a href="#">聯絡</a>
-            <button class="btnLogin-popup">登入</button>
+            <button id="nav-login" class="btnLogin-popup">登入</button>
+            <button id="logout-btn" class="btnLogin-popup">登出</button>
         </nav>
     </header>
     
@@ -26,22 +27,22 @@
         </span>
         <div class="form-box login">
             <h2>會員登入</h2>
-            <form action="#">
+            <form id="login-form" action="#">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                    <input type="text" id="user" required>
-                    <label for="user">使用者名稱</label>
+                    <input type="text" id="email-login" required>
+                    <label for="email-login">電子信箱</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" id="password" required>
-                    <label for="password">密碼</label>
+                    <input type="password" id="password-login" required>
+                    <label for="password-login">密碼</label>
                 </div>
                 <div class="remember-forget">
                     <label><input type="checkbox">記住帳號</label>
                     <a href="#">忘記密碼?</a>
                 </div>
-                <button type="submit" class="btn">登入</button>
+                <button id="login-btn" class="btn">登入</button>
                 <div class="login-register">
                     <p>還沒有帳號嗎?<a href="#" class="register-link">我要註冊</a></p>
                 </div>
@@ -50,11 +51,11 @@
 
         <div class="form-box register">
             <h2>會員註冊</h2>
-            <form action="#">
+            <form id="register-form" action="#">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                    <input type="text" id="username" required>
-                    <label for="username">使用者名稱</label>
+                    <input type="text" id="user-name" required>
+                    <label for="user-name">使用者名稱</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
@@ -70,7 +71,7 @@
                     <label><input type="checkbox">同意接受服務條款</label>
                     
                 </div>
-                <button type="submit" class="btn">註冊</button>
+                <button id="register-btn" class="btn">註冊</button>
                 <div class="login-register">
                     <p>已經有帳號了？<a href="#" class="login-link">登入</a></p>
                 </div>
@@ -78,8 +79,20 @@
         </div>
     </div>
 
+    <div class="container">
+        <div id="login-content" class="login-content">
+            <h2>尊敬的<span id="show-name"></span>，歡迎</h2>
+            <hr>
+            <p>點此連結查看我的<a href="https://samuel4518.github.io/portfolio/" target="_blank">個人履歷網站</a></p>
+        </div>
+    </div>
+    
+
+   
     <script src="login.js"></script>
+    <script type="module" src="login_ajax.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
 </body>
 </html>

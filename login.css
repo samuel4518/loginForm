@@ -13,6 +13,8 @@ body{
     align-items: center;
     min-height: 100vh;
     background: url('stone.jpg') no-repeat center / cover ;
+    /* background-color: #ccc; */
+    
 }
 
 header{
@@ -254,4 +256,40 @@ header{
 
 .login-register p a:hover{
     text-decoration: underline;
+}
+
+.container{
+    width: 80%;
+    height: 80vh;
+    /* border: 1px solid #000; */
+    border-radius: 1em;
+    margin-top: 5%;    
+    background-color: rgba(180, 180, 180, .8);
+}
+.login-content{
+    
+    /* border: 1px solid #000; */
+    margin: 1em 3em;
+    /* text-align: center; */
+}
+.login-content h2{
+    margin-bottom: .5em;
+    margin-left: 1em;
+}
+/* .login-content hr{
+    border-color: #fff;
+    height: .1em;
+    border: none;
+    background-color: #fff;
+} */
+.login-content p{
+    margin-top: .75em;
+    margin-left: 1.5em;
+}
+.login-content p a{
+    text-decoration: none;
+}
+
+.toggle{
+    display:none
 }
