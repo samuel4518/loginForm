@@ -23,7 +23,7 @@ const database = getDatabase(app)
 
 const loginForm = document.getElementById("login-form")
 const registerForm = document.getElementById("register-form")
-const userName = document.getElementById("show-name")
+const userName = document.getElementById("user-name")
 const userEmail = document.getElementById("email");
 const userPassword = document.getElementById("password");
 const loginEmail = document.getElementById("email-login");
@@ -36,11 +36,13 @@ const registerButton = document.getElementById("register-btn");
 const loginButton = document.getElementById("login-btn");
 const logoutButton = document.getElementById("logout-btn");
 const navLogin = document.getElementById("nav-login")
+const showName = document.getElementById("show-name")
 
 const register = async () => {
   const signUpName = userName.value;
   const signUpEmail = userEmail.value;
   const signUpPassword = userPassword.value;
+  // console.log(signUpName)
   createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
     .then((userCredential) => {
       const user = userCredential.user;
@@ -48,7 +50,7 @@ const register = async () => {
         userName: signUpName,
         email: signUpEmail
       })
-      console.log(user);
+      // console.log(user);
       registerForm.reset();
       alert("Your account has been created!");
     })
@@ -86,8 +88,7 @@ const login = async () => {
 };
 
 const userSignOut = async () => {
-  await signOut(auth);
-  console.log("logout")
+  await signOut(auth);  
 };
 
 const checkAuthState = async () => {
@@ -102,9 +103,9 @@ const checkAuthState = async () => {
       const uName = ref(database, 'users/' + user.uid + '/userName')
       // console.log(uName)
       onValue(uName,(snapshot) => {
-        const showName = snapshot.val();
+        const nameData = snapshot.val();
         // console.log(showName)
-        userName.innerText = showName
+        showName.innerText = nameData
       })
     } else {      
       loginContent.classList.add('toggle');
